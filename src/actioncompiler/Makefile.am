@@ -58,9 +58,11 @@ swf4compiler.tab.c: $(srcdir)/swf4compiler.y
 
 swf4compiler.tab.h: $(srcdir)/swf4compiler.y
 	$(YACC) --defines $(DEBUG) -p swf4 -b swf4compiler $(srcdir)/swf4compiler.y
+	gsed -i 44,46d $(srcdir)/swf4compiler.tab.h
 
 swf5compiler.tab.c: $(srcdir)/swf5compiler.y
 	$(YACC) -p swf5 -b swf5compiler $(srcdir)/swf5compiler.y
 
 swf5compiler.tab.h: $(srcdir)/swf5compiler.y
 	$(YACC) --defines $(DEBUG) -p swf5 -b swf5compiler $(srcdir)/swf5compiler.y
+	gsed -i 44,46d $(srcdir)/swf5compiler.tab.h
